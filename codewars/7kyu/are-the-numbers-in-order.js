@@ -7,8 +7,22 @@
 
 // For example:
 
-inAscOrder([1, 2, 4, 7, 19]); // returns true
-inAscOrder([1, 2, 3, 4, 5]); // returns true
-inAscOrder([1, 6, 10, 18, 2, 4, 20]); // returns false
-inAscOrder([9, 8, 7, 6, 5, 4, 3, 2, 1]); // returns false because the numbers are in DESCENDING order
+// inAscOrder([1, 2, 4, 7, 19]); // returns true
+// inAscOrder([1, 2, 3, 4, 5]); // returns true
+// inAscOrder([1, 6, 10, 18, 2, 4, 20]); // returns false
+// inAscOrder([9, 8, 7, 6, 5, 4, 3, 2, 1]); // returns false because the numbers are in DESCENDING order
 // N.B. If your solution passes all fixed tests but fails at the random tests, make sure you aren't mutating the input array.
+
+// Solution
+function inAscOrder(arr) {
+	for (let i = 0; i < arr.length; i++) {
+		for (let j = i + 1; j < arr.length; j++) {
+			if (arr[j] > arr[i]) {
+				continue;
+			} else {
+				return false;
+			}
+		}
+	}
+	return true;
+}
